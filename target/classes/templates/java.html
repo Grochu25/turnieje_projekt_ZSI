@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rejestracja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link th:href="@{css/java.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="conteiner">
+      <img class="napis1" th:src="@{img/napis.png}" />
+
+      <div class="wrapper">
+        <main>
+          <h1>Formularz rejestracyjny</h1>
+		  <h2 class="error" th:if="${przepelnienie}">Brak miejsc w tej kategorii</h2>
+          <form
+            th:object="${zawodnik}"
+            method="post"
+          >
+            <div>
+              <h3>
+                Imię: <input type="text" th:field="*{imie}" name="Imie" /><br/>
+                <span class="error" th:if="${#fields.hasErrors('imie')}" th:errors="*{imie}">Proszę podać imie</span>
+              </h3>
+              <h3>
+                Nazwisko:
+                <input type="text" th:field="*{nazwisko}" name="Nazwisko" /><br/>
+                <span class="error" th:if="${#fields.hasErrors('nazwisko')}" th:errors="*{nazwisko}">Proszę podać nazwisko nazwiska</span>
+              </h3>
+              <h3>
+                Data urodzenia: <input type="date" th:field="*{urodzenie}" /><br/>
+                <span class="error" th:if="${#fields.hasErrors('urodzenie')}" th:errors="*{urodzenie}">Proszę podać datę urodzenia</span>
+              </h3>
+			  
+              <fieldset>
+                <legend><h3>Płeć:</h3></legend>
+                <div>
+                  <input
+                    type="radio"
+                    id="kobieta"
+                    name="plec"
+                    value="kobieta"
+                    th:field="*{plec}"
+                    th:value="'K'"
+                  />
+                  <label for="kobieta">Kobieta</label>
+                  <input
+                    type="radio"
+                    id="menzczyzna"
+                    name="plec"
+                    value="menzczyzna"
+                    th:field="*{plec}"
+                    th:value="'M'"
+                  />
+                  <label for="menzczyzna">Mężczyzna</label>
+                </div>
+              </fieldset>
+			  <span class="error" th:if="${#fields.hasErrors('plec')}" th:errors="*{plec}">Proszę wybrać płeć</span><br/>
+			 
+			 
+              <pre id="log"></pre>
+              <fieldset>
+                <legend><h3>Waga:</h3></legend>
+                <div>
+                  <input
+                    type="radio"
+                    id="-60kg"
+                    name="waga"
+                    value="-60kg"
+                    th:field="*{waga}"
+                    th:value="60"
+                  />
+                  <label for="-60kg">-60 kg </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="-70kg"
+                    name="waga"
+                    value="-70kg"
+                    th:field="*{waga}"
+                    th:value="70"
+                  />
+                  <label for="-70kg">-70 kg </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="-80kg"
+                    name="waga"
+                    value="-80kg"
+                    th:field="*{waga}"
+                    th:value="80"
+                  />
+                  <label for="-80kg">-80 kg </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="+80kg"
+                    name="waga"
+                    value="1"
+					th:field="*{waga}"
+                    th:value="1"
+                  />
+                  <label for="+80kg">+80 kg </label>
+                </div>
+              </fieldset>
+			  <span class="error" th:if="${#fields.hasErrors('waga')}" th:errors="*{waga}">Proszę wybrać kategorie wagową </span><br/>
+            </div>
+            <input class="button" type="submit" value="Wyślij zgłoszenie" />
+          </form>
+        </main>
+      </div>
+      <img class="napis2" th:src="@{img/napis.png}" />
+    </div>
+    <div>
+		<a href="http://localhost:8080" class="button2">Powrót do strony głównej</a>
+		</div>
+  </body>
+</html>

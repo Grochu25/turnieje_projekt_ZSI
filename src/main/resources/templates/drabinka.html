@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html
+  lang="pl"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zawodnicy w kategoriach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link th:href="@{css/drabinka.css}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="naglowek">
+      <h1><p>Zawodnicy w kategorii - <span th:text="${wyswietlana}"></span></p></h1>
+    </div>
+
+    <div class="ramki">
+      <hr class="linia1" />
+      <hr class="linia2" />
+      <hr class="linia3" />
+      <hr class="linia4" />
+      <hr class="linia5" />
+      <hr class="linia6" />
+      <hr class="linia7" />
+      <hr class="linia8" />
+      <div class="pionowa1"></div>
+      <div class="pionowa2"></div>
+      <div class="pionowa3"></div>
+      <div class="pionowa4"></div>
+      <hr class="linia1_2" />
+      <hr class="linia2_2" />
+      <hr class="linia3_2" />
+      <hr class="linia4_2" />
+      <hr class="linia1_3" />
+      <hr class="linia2_3" />
+      <hr class="linia3_3" />
+      <hr class="linia4_3" />
+      <div class="pionowa1_2"></div>
+      <div class="pionowa2_2"></div>
+      <hr class="linia1_4" />
+      <hr class="linia2_4" />
+      <hr class="linia1_5" />
+      <hr class="linia2_5" />
+      <div class="pionowa1_3"></div>
+      <hr class="linia1_6" />
+      <hr class="linia1_7" />
+      <hr class="linia1_8" />
+      <hr class="linia2_8" />
+      <div class="pionowa1_4"></div>
+      <hr class="linia1_9" />
+      <hr class="linia2_9" />
+      <div class="pionowa1_5"></div>
+      <div class="pionowa2_5"></div>
+      <hr class="linia1_10" />
+      <hr class="linia2_10" />
+      <hr class="linia3_10" />
+      <hr class="linia4_10" />
+      <hr class="linia1_11" />
+      <hr class="linia2_11" />
+      <hr class="linia3_11" />
+      <hr class="linia4_11" />
+      <div class="pionowa1_6"></div>
+      <div class="pionowa2_6"></div>
+      <div class="pionowa3_6"></div>
+      <div class="pionowa4_6"></div>
+      <hr class="linia1_12" />
+      <hr class="linia2_12" />
+      <hr class="linia3_12" />
+      <hr class="linia4_12" />
+      <hr class="linia5_12" />
+      <hr class="linia6_12" />
+      <hr class="linia7_12" />
+      <hr class="linia8_12" />
+    </div>
+
+    <div class="wrapper">
+      <div class="kolumna">
+        <div class="ramka1" >
+          <center th:if="${zawodnicy.size()>15}" th:text="${zawodnicy[0].imie + ' ' + zawodnicy[0].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=15}">---</center>
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>15}" th:text="${zawodnicy[15].imie + ' ' + zawodnicy[15].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=15}">---</center>
+        </div>
+        <div class="ramka1">
+          <center th:if="${zawodnicy.size()>8}" th:text="${zawodnicy[7].imie + ' ' + zawodnicy[7].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=8}">---</center>
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>8}" th:text="${zawodnicy[8].imie + ' ' + zawodnicy[8].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=8}">---</center>
+        </div>
+        <div class="ramka1">
+          <center th:if="${zawodnicy.size()>11}" th:text="${zawodnicy[4].imie + ' ' + zawodnicy[4].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=11}">---</center>
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>11}" th:text="${zawodnicy[11].imie + ' ' + zawodnicy[11].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=11}">---</center>
+        </div>
+        <div class="ramka1">
+       	  <center th:if="${zawodnicy.size()>12}" th:text="${zawodnicy[3].imie + ' ' + zawodnicy[3].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=12}">---</center>   
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>12}" th:text="${zawodnicy[12].imie + ' ' + zawodnicy[12].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=12}">---</center>
+        </div>
+      </div>
+      <div class="kolumna">
+        <div class="ramka3">
+          <center th:if="${zawodnicy.size()>7 and zawodnicy.size() < 16}" th:text="${zawodnicy[0].imie + ' ' + zawodnicy[0].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=7 or zawodnicy.size() >= 16}">---</center>
+        </div>
+        <div class="ramka4">
+          <center th:if="${zawodnicy.size()>7 and zawodnicy.size() < 9}" th:text="${zawodnicy[7].imie + ' ' + zawodnicy[7].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=7 or zawodnicy.size() >= 9}">---</center>
+        </div>
+        <div class="ramka3">
+          <center th:if="${zawodnicy.size()>4 and zawodnicy.size() < 12}" th:text="${zawodnicy[4].imie + ' ' + zawodnicy[4].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=4 or zawodnicy.size() >= 12}">---</center>
+        </div>
+        <div class="ramka4">
+          <center th:if="${zawodnicy.size()>4 and zawodnicy.size() < 13}" th:text="${zawodnicy[3].imie + ' ' + zawodnicy[3].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=4 or zawodnicy.size() >= 13}">---</center>
+        </div>
+      </div>
+      <div class="kolumna">
+        <div class="ramka5">
+          <center th:if="${zawodnicy.size()>3 and zawodnicy.size() < 8}" th:text="${zawodnicy[0].imie + ' ' + zawodnicy[0].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=3 or zawodnicy.size() >= 8}">---</center>
+        </div>
+        <div class="ramka6">
+          <center th:if="${zawodnicy.size()>3 and zawodnicy.size() < 5}" th:text="${zawodnicy[3].imie + ' ' + zawodnicy[3].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=3 or zawodnicy.size() >= 5}">---</center>
+        </div>
+      </div>
+      <div class="kolumna">
+        <div class="ramka7">
+          <center th:if="${zawodnicy.size()>0 and zawodnicy.size() <= 3}" th:text="${zawodnicy[0].imie + ' ' + zawodnicy[0].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=0 or zawodnicy.size() > 3}">---</center>
+        </div>
+      </div>
+      <div class="kolumna">
+        <div class="ramka8">
+          <center th:if="${zawodnicy.size()>1 and zawodnicy.size() <=2}" th:text="${zawodnicy[1].imie + ' ' + zawodnicy[1].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=1 or zawodnicy.size() >2}">---</center>
+        </div>
+      </div>
+      <div class="kolumna">
+        <div class="ramka5">
+          <center th:if="${zawodnicy.size()>2 and zawodnicy.size() < 6}" th:text="${zawodnicy[2].imie + ' ' + zawodnicy[2].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=2 or zawodnicy.size() >= 6}">---</center>
+        </div>
+        <div class="ramka6">
+          <center th:if="${zawodnicy.size()>2 and zawodnicy.size() < 7}" th:text="${zawodnicy[1].imie + ' ' + zawodnicy[1].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=2 or zawodnicy.size() >= 7}">---</center>
+        </div>
+      </div>
+      <div class="kolumna">
+        <div class="ramka3">
+          <center th:if="${zawodnicy.size()>5 and zawodnicy.size() < 14}" th:text="${zawodnicy[2].imie + ' ' + zawodnicy[2].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=5 or zawodnicy.size() >= 14}">---</center>
+        </div>
+        <div class="ramka4">
+          <center th:if="${zawodnicy.size()>5 and zawodnicy.size() < 11}" th:text="${zawodnicy[5].imie + ' ' + zawodnicy[5].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=5 or zawodnicy.size() >= 11}">---</center>
+        </div>
+        <div class="ramka3">
+          <center th:if="${zawodnicy.size()>6 and zawodnicy.size() < 10}" th:text="${zawodnicy[6].imie + ' ' + zawodnicy[6].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=6 or zawodnicy.size() >= 10}">---</center>
+        </div>
+        <div class="ramka4">
+          <center th:if="${zawodnicy.size()>6 and zawodnicy.size() < 15}" th:text="${zawodnicy[1].imie + ' ' + zawodnicy[1].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=6 or zawodnicy.size() >= 15}">---</center>
+        </div>
+      </div>
+      <div class="kolumna">
+        <div class="ramka1">
+          <center th:if="${zawodnicy.size()>13}" th:text="${zawodnicy[2].imie + ' ' + zawodnicy[2].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=13}">---</center>
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>13}" th:text="${zawodnicy[13].imie + ' ' + zawodnicy[13].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=13}">---</center>
+        </div>
+        <div class="ramka1">
+          <center th:if="${zawodnicy.size()>10}" th:text="${zawodnicy[5].imie + ' ' + zawodnicy[5].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=10}">---</center>
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>10}" th:text="${zawodnicy[10].imie + ' ' + zawodnicy[10].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=10}">---</center>
+        </div>
+        <div class="ramka1">
+           <center th:if="${zawodnicy.size()>9}" th:text="${zawodnicy[6].imie + ' ' + zawodnicy[6].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=9}">---</center>
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>9}" th:text="${zawodnicy[9].imie + ' ' + zawodnicy[9].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=9}">---</center>
+        </div>
+        <div class="ramka1">
+           <center th:if="${zawodnicy.size()>14}" th:text="${zawodnicy[1].imie + ' ' + zawodnicy[1].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=14}">---</center>
+        </div>
+        <div class="ramka2">
+          <center th:if="${zawodnicy.size()>14}" th:text="${zawodnicy[14].imie + ' ' + zawodnicy[14].nazwisko}">---</center>
+          <center th:if="${zawodnicy.size()<=14}">---</center> 
+        </div>
+      </div>
+    </div>
+    
+    <div>
+		<div>
+		<a href="http://localhost:8080" class="button2">Powrót do strony głównej</a>
+		</div>
+	<center>
+		<form th:object="${katmodel}" method="POST">
+			<fieldset>
+                <legend><h3>Wybierz kategorie:</h3></legend>
+				<div>
+                  <input type="radio" th:field="*{kat}" id="U21_k" name="kat" th:value="U21_k"/>
+                  <label for="U21_k">U21 Kobiet</label>
+                </div>
+				<div>
+                  <input type="radio" th:field="*{kat}" id="U21_m" name="kat" th:value="U21_m"/>
+                  <label for="U21_m">U21 Mężczyzn</label>
+                </div>
+				<div>
+                  <input type="radio" th:field="*{kat}" id="SNR_k" name="kat" th:value="SNR_k"/>
+                  <label for="SNR_k">Senior Kobiet</label>
+                </div>
+				<div>
+                  <input type="radio" th:field="*{kat}" id="SNR_m" name="kat" th:value="SNR_m"/>
+                  <label for="SNR_m">Senior Mężczyzn</label>
+                </div>
+                </fieldset>
+            <fieldset>
+                <legend><h3>Waga:</h3></legend>
+                <div>
+                  <input type="radio" th:field="*{waga}" id="-60kg" name="waga" th:value="60" />
+                  <label for="-60kg">-60 kg </label>
+                </div>
+                <div>
+                  <input type="radio" th:field="*{waga}" id="-70kg" name="waga" th:value="70"/>
+                  <label for="-70kg">-70 kg </label>
+                </div>
+				<div>
+                  <input type="radio" th:field="*{waga}" id="-80kg" name="waga" th:value="80"/>
+                  <label for="-80kg">-80 kg </label>
+                </div>
+				<div>
+                  <input type="radio" th:field="*{waga}" id="+80kg" name="waga" th:value="W"/>
+                  <label for="+80kg">+80 kg </label>
+                </div>
+                </fieldset>
+			
+			<input class="button" type="submit" value="Zobacz rozpiskę" />
+		</div>
+		</form>
+	</center>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+body {
+  background-image: url("../img/karate.jpg");
+  background-size: cover;
+  text-align: center;
+}
+
+.napis1 {
+  margin-right: 50px;
+}
+.napis2 {
+  margin-left: 50px;
+}
+
+.conteiner {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1600px;
+  margin: 80px 140px;
+}
+.buttons{
+	margin-top:100px;
+	  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button{
+  text-decoration: none;
+  margin-bottom:20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  background-color: lightgray;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;   
+}
+
+ .button:hover {
+  background-color: grey;
+        }
